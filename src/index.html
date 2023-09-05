@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en-CA">
+  <head>
+    <meta charset="utf-8" />
+    <title>Nidhogg Sim</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      #sim {
+        background: #eee;
+        display: block;
+        margin: 0 auto;
+        height: 100vmin;
+        width: 100vmin;
+      }
+      fieldset#position-buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1em;
+      }
+      form {
+        display: grid;
+        gap: 1em;
+      }
+      fieldset#audio-settings {
+        display: grid;
+        gap: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <audio hidden id="bgm">
+      <source src="BGM_EX4_Ban_Nidhogg_02.ogg" type="audio/ogg" />
+    </audio>
+    <canvas id="sim" width="1000" height="1000"></canvas>
+    <dialog id="menu">
+      <form method="dialog">
+        <fieldset id="audio-settings">
+          <legend>Volume</legend>
+          <div id="volume" style="display: flex; align-items: center">
+            <input
+              type="range"
+              id="volume-slider"
+              oninput="volDisp.value = volSlider.value;"
+              name="volSlider"
+              value="50"
+            />
+            <output id="vol-disp" name="volDisp">50</output>
+          </div>
+        </fieldset>
+
+        <fieldset id="position-buttons">
+          <legend>Position to practice</legend>
+          <label><input type="radio" name="player" value="T1" />T1</label>
+          <label><input type="radio" name="player" value="H1" />H1</label>
+          <label><input type="radio" name="player" value="M1" />M1</label>
+          <label><input type="radio" name="player" value="R1" />R1</label>
+          <label><input type="radio" name="player" value="T2" />T2</label>
+          <label><input type="radio" name="player" value="H2" />H2</label>
+          <label><input type="radio" name="player" value="M2" />M2</label>
+          <label><input type="radio" name="player" value="R2" />R2</label>
+          <label
+            ><input
+              type="radio"
+              name="player"
+              value="None"
+              checked
+            />None</label
+          >
+        </fieldset>
+        <button type="Submit" id="start">Start</button>
+      </form>
+    </dialog>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

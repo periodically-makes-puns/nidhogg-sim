@@ -1,0 +1,23 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@web/dev-server": "^0.2.5",
+    "@web/rollup-plugin-html": "^2.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "prettier": "3.0.0",
+    "rollup": "^3.25.2"
+  },
+  "dependencies": {
+    "xiv-mech-sim": "gitlab:Absotively/xiv-mech-sim"
+  },
+  "scripts": {
+    "start": "web-dev-server --node-resolve --open src/ --watch",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,css,md,html}": "prettier --write"
+  }
+}
